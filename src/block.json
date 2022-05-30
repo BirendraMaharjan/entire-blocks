@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "create-block/entire-block",
+  "version": "0.1.0",
+  "title": "Entire - WordPress Gutenberg Blocks",
+  "category": "widgets",
+  "icon": "awards",
+  "description": "Entire - WordPress Gutenberg Blocks plugin for creating fully customized News, Magazines, Websites, Personal Blogs, Travel Blogs, Fashion Blogs, Viral News, Food Reviews, Recipes Blogs, etc.",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Blogs"
+    },
+    "description": {
+      "type": "string",
+      "default": "Blog description"
+    },
+    "showBlog": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayThumbnails": {
+      "type": "boolean",
+      "default": true
+    },
+    "blogColumns": {
+      "type": "integer",
+      "default": 4
+    },
+    "noOfPost": {
+      "type": "integer",
+      "default": 4
+    },
+    "alignment": {
+      "type": "string",
+      "default": "none"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ff0000"
+    },
+    "titleColorList": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "descriptionColorList": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "readMoreText": {
+      "type": "string",
+      "default": "Read More >>"
+    },
+    "readMoreColor": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "paginationType": {
+      "type": "string",
+      "default": "load"
+    },
+    "paginationColor": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "paginationBackgroundColor": {
+      "type": "string",
+      "default": "inherit"
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": true
+  },
+  "textdomain": "agutenblog",
+  "viewScript": "file:./main.js",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

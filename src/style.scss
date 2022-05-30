@@ -1,0 +1,85 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+
+// Custom.scss
+*{
+	box-sizing: border-box;
+}
+.agutenpride-section {
+	width: 100%;
+	max-width: 100% !important;
+
+	.list-item-wrap {
+		width: 100%;
+		max-width: 100%;
+
+		.list-items {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			max-width: 100%;
+			justify-content: space-between;
+
+		}
+
+		.list-item {
+			box-sizing: border-box;
+			flex: 0 0 calc(50% - 15px);
+			flex-basis: calc(50% - 15px);
+			position: relative;
+			width: 100%;
+			border: 1px solid #ddd;
+			margin: 15px 0;
+		}
+
+		.list-item-img {
+			float: left;
+			width: 50%;
+			height: 100%;
+
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+		}
+
+		.list-item-desc {
+			padding: 15px 15px;
+			display: block;
+			overflow: hidden;
+		}
+	}
+
+	.pagination-wrap{
+		margin-top: 15px;
+	}
+
+	.page-numbers {
+		list-style: none;
+		margin: 0;
+		display: flex;
+		li{
+			margin: 0 5px 0 0;
+		}
+
+		.page-numbers {
+			display: inline-block;
+			padding: 5px 15px;
+			text-decoration: none;
+		}
+		.page-numbers:hover{
+			opacity: 0.9;
+		}
+		.page-numbers.current{
+			padding: 4px 15px;
+		}
+	}
+}
