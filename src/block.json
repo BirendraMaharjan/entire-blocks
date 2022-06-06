@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "create-block/entire-block",
+  "name": "create-block/entire-blocks",
   "version": "0.1.0",
   "title": "Entire - WordPress Gutenberg Blocks",
   "category": "widgets",
@@ -26,7 +26,7 @@
     },
     "blogColumns": {
       "type": "integer",
-      "default": 4
+      "default": 3
     },
     "noOfPost": {
       "type": "integer",
@@ -73,8 +73,7 @@
     "html": false,
     "color": true
   },
-  "textdomain": "agutenblog",
-  "viewScript": "file:./main.js",
+  "textdomain": "entire-block",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

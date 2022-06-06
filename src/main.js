@@ -68,9 +68,7 @@ function getResults() {
 	/* this.resultsDiv.html("Imagine real search results here...");
                     this.isSpinnerVisible = false;*/
 }
-/*
 $('body').on('click', 'a.page-numbers', function (e) {
 	e.preventDefault();
 	getResults();
 });
-*/

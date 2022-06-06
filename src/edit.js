@@ -43,6 +43,10 @@ export default function Edit(props) {
 	const [thePreview, setThePreview] = useState('');
 	const [isChecked, setChecked] = useState(attributes.showBlog);
 	const [isCheckedThumbnail, setCheckedThumbnail] = useState(attributes.displayThumbnails);
+
+
+
+
 	useEffect(() => {
 		async function go() {
 			const response = await apiFetch({
@@ -56,11 +60,7 @@ export default function Edit(props) {
 	}, [attributes.showBlog, attributes.displayThumbnails, attributes.noOfPost, attributes.blogColumns, attributes.titleColorList, attributes.descriptionColorList, attributes.readMoreText, attributes.readMoreColor, attributes.paginationType, attributes.paginationColor, attributes.paginationBackgroundColor]);
 
 	const blockProps = useBlockProps();
-	const colors = [
-		{ name: 'red', color: '#f00' },
-		{ name: 'white', color: '#fff' },
-		{ name: 'blue', color: '#00f' },
-	];
+
 	return (
 		<div {...blockProps}>
 			{isSelected && (
@@ -86,7 +86,6 @@ export default function Edit(props) {
 									help={isCheckedThumbnail ? __('Show Thumbnail', 'entire-blocks') : __('Hide Thumbnail.', 'entire-blocks')}
 									checked={isCheckedThumbnail}
 									onChange={(val) => {
-										console.log(val);
 										setCheckedThumbnail(val);
 										setAttributes({
 											displayThumbnails:  val === true,
@@ -117,7 +116,6 @@ export default function Edit(props) {
 										setAttributes({
 											blogColumns: val,
 										});
-										console.log(val, attributes.blogColumns);
 									}}
 									min={1}
 									max={4}
@@ -172,7 +170,7 @@ export default function Edit(props) {
 							</PanelRow>
 						</PanelBody>
 						<PanelBody title="Pagination" initialOpen={false}>
-							{/*<PanelRow>
+							<PanelRow>
 								<SelectControl
 									label="Pagination Type"
 									value={attributes.paginationType}
@@ -183,7 +181,7 @@ export default function Edit(props) {
 									]}
 									onChange={(val) => setAttributes({ paginationType: val })}
 								/>
-							</PanelRow>*/}
+							</PanelRow>
 							<PanelRow>
 								<p>
 									<strong>{__('Text Color', 'entire-blocks')}</strong>
