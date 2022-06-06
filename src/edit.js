@@ -10,10 +10,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-components/
  */
-import { Disabled, TextControl, CheckboxControl, SelectControl, RangeControl, Panel, PanelBody, PanelRow, ToggleControl, ColorPalette, ColorPicker, ColorIndicator } from '@wordpress/components';
-import { more, code, brush } from '@wordpress/icons';
+import { Disabled, TextControl, SelectControl, RangeControl, Panel, PanelBody, PanelRow, ToggleControl, ColorPalette } from '@wordpress/components';
 
-import { useSelect } from '@wordpress/data';
 import { useState, useEffect } from 'react';
 
 import apiFetch from '@wordpress/api-fetch';
@@ -24,7 +22,7 @@ import apiFetch from '@wordpress/api-fetch';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps, InspectorControls, RichText, BlockControls, AlignmentToolbar, PanelColorSettings, ColorPaletteControl } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls, RichText, BlockControls, AlignmentToolbar } from '@wordpress/block-editor';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -44,16 +42,12 @@ export default function Edit(props) {
 	const [isChecked, setChecked] = useState(attributes.showBlog);
 	const [isCheckedThumbnail, setCheckedThumbnail] = useState(attributes.displayThumbnails);
 
-
-
-
 	useEffect(() => {
 		async function go() {
 			const response = await apiFetch({
 				path: `/getPosts/v1/getHTML?showBlog=${attributes.showBlog}&displayThumbnails=${attributes.displayThumbnails}&noOfPost=${attributes.noOfPost}&blogColumns=${attributes.blogColumns}&titleColorList=${encodeURIComponent(attributes.titleColorList)}&descriptionColorList=${encodeURIComponent(attributes.descriptionColorList)}&readMoreText=${attributes.readMoreText}&readMoreColor=${encodeURIComponent(attributes.readMoreColor)}&paginationType=${attributes.paginationType}&paginationColor=${encodeURIComponent(attributes.paginationColor)}&paginationBackgroundColor=${encodeURIComponent(attributes.paginationBackgroundColor)}`,
 				method: 'GET',
 			});
-			//console.log(`/getPosts/v1/getHTML?showBlog=${attributes.showBlog}&displayThumbnails=${attributes.displayThumbnails}&noOfPost=${attributes.noOfPost}&blogColumns=${attributes.blogColumns}&titleColorList=${encodeURIComponent(attributes.titleColorList)}&descriptionColorList=${encodeURIComponent(attributes.descriptionColorList)}&readMoreText=${attributes.readMoreText}&readMoreColor=${encodeURIComponent(attributes.readMoreColor)}&paginationType=${attributes.paginationType}&paginationColor=${encodeURIComponent(attributes.paginationColor)}&paginationBackgroundColor=${encodeURIComponent(attributes.paginationBackgroundColor)}`);
 			setThePreview(response);
 		}
 		go();
@@ -88,7 +82,7 @@ export default function Edit(props) {
 									onChange={(val) => {
 										setCheckedThumbnail(val);
 										setAttributes({
-											displayThumbnails:  val === true,
+											displayThumbnails: val === true,
 										});
 									}}
 								/>
@@ -222,7 +216,7 @@ export default function Edit(props) {
 				<RichText {...blockProps} tagName="p" value={attributes.description} onChange={(val) => setAttributes({ description: val })} placeholder={__('Section Description...', 'entire-blocks')} />
 			</div>
 			<Disabled>
-			<div dangerouslySetInnerHTML={{ __html: thePreview }} />
+				<div dangerouslySetInnerHTML={{ __html: thePreview }} />
 			</Disabled>
 		</div>
 	);
