@@ -74,6 +74,7 @@
     "color": false
   },
   "textdomain": "entire-block",
+  "viewScript": "file:./main.js",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

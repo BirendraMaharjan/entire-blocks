@@ -1,1 +1,100 @@
-.entire-blocks-section{max-width:100%!important;width:100%}.entire-blocks-section *,.entire-blocks-section :after,.entire-blocks-section :before{box-sizing:border-box}.entire-blocks-section .list-item-wrap{margin-left:auto;margin-right:auto;width:100%}.entire-blocks-section .list-item-wrap .list-items{display:flex;flex-wrap:wrap;margin-left:-10px;margin-right:-10px}.entire-blocks-section .list-item-wrap .list-item{flex:0 0 33.333333%;min-height:1px;overflow-wrap:anywhere;padding:10px;position:relative;width:100%}.entire-blocks-section .list-item-wrap .entire-blocks-box-shadow{box-shadow:0 .25rem .75rem rgba(0,0,0,.05)}.entire-blocks-section .list-item-wrap .entire-blocks-card{border:1px solid rgba(0,0,0,.125);border-radius:.25rem;display:flex;flex-direction:column;height:100%;position:relative}.entire-blocks-section .list-item-wrap .list-item-img{float:left;height:auto;width:100%}.entire-blocks-section .list-item-wrap .list-item-img img{border-radius:.25rem .25rem 0 0;display:block;height:100%;-o-object-fit:cover;object-fit:cover;width:100%}.entire-blocks-section .list-item-wrap .list-item-desc{display:block;overflow:hidden;padding:15px}.entire-blocks-section .list-item-wrap .list-item-desc h3{margin:0}.entire-blocks-section .pagination-wrap{margin-top:15px}.entire-blocks-section .page-numbers{display:flex;list-style:none;margin:0;padding:0}.entire-blocks-section .page-numbers li{margin:0 5px 0 0}.entire-blocks-section .page-numbers .page-numbers{display:inline-block;padding:5px 15px;text-decoration:none}.entire-blocks-section .page-numbers .page-numbers:hover{opacity:.9}.entire-blocks-section .page-numbers .page-numbers.current{padding:4px 15px}@media(max-width:639px){.list-items{flex-direction:column;width:100%}}
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.entire-blocks-section {
+  width: 100%;
+  max-width: 100% !important;
+}
+.entire-blocks-section *, .entire-blocks-section ::after, .entire-blocks-section ::before {
+  box-sizing: border-box;
+}
+.entire-blocks-section .list-item-wrap {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.entire-blocks-section .list-item-wrap .list-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+.entire-blocks-section .list-item-wrap .list-item {
+  flex: 0 0 33.333333%;
+  /*max-width: 33.333333%;*/
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding: 10px;
+  overflow-wrap: anywhere;
+}
+.entire-blocks-section .list-item-wrap .entire-blocks-box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+.entire-blocks-section .list-item-wrap .entire-blocks-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  height: 100%;
+}
+.entire-blocks-section .list-item-wrap .list-item-img {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+.entire-blocks-section .list-item-wrap .list-item-img img {
+  border-radius: 0.25rem 0.25rem 0 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.entire-blocks-section .list-item-wrap .list-item-desc {
+  padding: 15px 15px;
+  display: block;
+  overflow: hidden;
+}
+.entire-blocks-section .list-item-wrap .list-item-desc h3 {
+  margin: 0;
+}
+.entire-blocks-section .pagination-wrap {
+  margin-top: 15px;
+}
+.entire-blocks-section .page-numbers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.entire-blocks-section .page-numbers li {
+  margin: 0 5px 0 0;
+}
+.entire-blocks-section .page-numbers .page-numbers {
+  display: inline-block;
+  padding: 5px 15px;
+  text-decoration: none;
+}
+.entire-blocks-section .page-numbers .page-numbers:hover {
+  opacity: 0.9;
+}
+.entire-blocks-section .page-numbers .page-numbers.current {
+  padding: 4px 15px;
+}
+
+@media (max-width: 639px) {
+  .list-items {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/
