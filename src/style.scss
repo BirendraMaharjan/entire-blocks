@@ -7,43 +7,54 @@
 
 
 // Custom.scss
-*{
-	box-sizing: border-box;
-}
 .entire-blocks-section {
+	*, ::after, ::before {
+		box-sizing: border-box;
+	}
 	width: 100%;
 	max-width: 100% !important;
 
 	.list-item-wrap {
 		width: 100%;
-		max-width: 100%;
-
+		margin-right: auto;
+		margin-left: auto;
 		.list-items {
 			display: flex;
 			flex-wrap: wrap;
-			width: 100%;
-			max-width: 100%;
-			justify-content: space-between;
-
+			margin-right: -10px;
+			margin-left: -10px;
 		}
 
 		.list-item {
-			box-sizing: border-box;
-			flex: 0 0 calc(50% - 15px);
-			flex-basis: calc(50% - 15px);
+			flex: 0 0 33.333333%;
+			/*max-width: 33.333333%;*/
 			position: relative;
 			width: 100%;
-			border: 1px solid #ddd;
-			margin: 15px 0;
+			min-height: 1px;
+			padding: 10px;
+			overflow-wrap: anywhere;
 		}
+		.entire-blocks-box-shadow {
+			box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 5%);
+		}
+
+		.entire-blocks-card{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			border: 1px solid rgba(0,0,0,.125);
+			border-radius: 0.25rem;
+			height: 100%;
+		}
+
 
 		.list-item-img {
 			float: left;
-			width: 50%;
-			height: 100%;
-
+			width: 100%;
+			height: auto;
 
 			img {
+				border-radius: 0.25rem 0.25rem 0 0;
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
@@ -55,6 +66,10 @@
 			padding: 15px 15px;
 			display: block;
 			overflow: hidden;
+
+			h3{
+				margin: 0;
+			}
 		}
 	}
 
@@ -65,6 +80,7 @@
 	.page-numbers {
 		list-style: none;
 		margin: 0;
+		padding: 0;
 		display: flex;
 		li{
 			margin: 0 5px 0 0;
@@ -81,5 +97,13 @@
 		.page-numbers.current{
 			padding: 4px 15px;
 		}
+	}
+
+}
+
+@media (max-width: 639px) {
+	.list-items {
+		flex-direction: column;
+		width: 100%;
 	}
 }

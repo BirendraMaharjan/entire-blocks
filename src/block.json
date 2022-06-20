@@ -4,8 +4,8 @@
   "name": "create-block/entire-blocks",
   "version": "0.1.0",
   "title": "Entire - WordPress Gutenberg Blocks",
-  "category": "widgets",
-  "icon": "awards",
+  "category": "design",
+  "icon": "admin-post",
   "description": "Entire - WordPress Gutenberg Blocks plugin for creating fully customized News, Magazines, Websites, Personal Blogs, Travel Blogs, Fashion Blogs, Viral News, Food Reviews, Recipes Blogs, etc.",
   "attributes": {
     "title": {
@@ -26,11 +26,11 @@
     },
     "blogColumns": {
       "type": "integer",
-      "default": 3
+      "default": 2
     },
     "noOfPost": {
       "type": "integer",
-      "default": 4
+      "default": 0
     },
     "alignment": {
       "type": "string",
@@ -71,7 +71,7 @@
   },
   "supports": {
     "html": false,
-    "color": true
+    "color": false
   },
   "textdomain": "entire-block",
   "editorScript": "file:./index.js",

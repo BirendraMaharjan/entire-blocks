@@ -35,11 +35,7 @@ registerBlockType(name, {
 	 * Used to construct a preview for the block to be shown in the block inserter.
 	 */
 	example: {
-		attributes: {
-			message: 'AGutenBlog',
-			title: 'title is here',
-			titleColor: '#00ff00',
-		},
+		attributes: {},
 	},
 	/**
 	 * @see ./edit.js

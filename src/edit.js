@@ -165,18 +165,6 @@ export default function Edit(props) {
 						</PanelBody>
 						<PanelBody title="Pagination" initialOpen={false}>
 							<PanelRow>
-								<SelectControl
-									label="Pagination Type"
-									value={attributes.paginationType}
-									options={[
-										{ label: __('Number', 'entire-blocks'), value: 'number' },
-										{ label: __('Ajax', 'entire-blocks'), value: 'ajax' },
-										{ label: __('Load More', 'entire-blocks'), value: 'load' },
-									]}
-									onChange={(val) => setAttributes({ paginationType: val })}
-								/>
-							</PanelRow>
-							<PanelRow>
 								<p>
 									<strong>{__('Text Color', 'entire-blocks')}</strong>
 									<ColorPalette

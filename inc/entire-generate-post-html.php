@@ -2,6 +2,7 @@
 function entire_generate_post_html( $data ) {
 	ob_start();
 
+
 	$noOfPost    = intval( $data['noOfPost'] );
 	$blogColumns = intval( $data['blogColumns'] );
 
@@ -22,8 +23,8 @@ function entire_generate_post_html( $data ) {
         }
 
         .entire-blocks-section .list-item-wrap .list-item {
-            flex: 0 0 calc(<?php echo esc_attr(100 / $blogColumns); ?>% - 15px);
-            flex-basis: calc(<?php echo esc_attr(100 / $blogColumns); ?>% - 15px);
+            flex: 0 0 <?php echo esc_attr(100 / $blogColumns); ?>%;
+            /*max-width: < ?php echo esc_attr(100 / $blogColumns); ?>%;*/
         }
 
         .entire-blocks-section .list-item-desc a {
@@ -55,26 +56,28 @@ function entire_generate_post_html( $data ) {
                     <!-- the loop -->
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                         <div class="list-item" id="post-<?php the_ID(); ?>">
-							<?php if ( has_post_thumbnail() && $data['displayThumbnails'] == 'true' ): ?>
-                                <div class="list-item-img">
-									<?php the_post_thumbnail( 'post-thumbnail-small' ); ?>
-                                </div><!-- .list-item-img -->
-							<?php endif; ?>
-                            <div class="list-item-desc">
-                                <h3 class="list-item-title">
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                </h3>
-                                <p>
-									<?php if ( has_excerpt() ): ?>
-										<?php echo wp_kses_post( get_the_excerpt() ); ?>
-									<?php else: ?>
-										<?php echo wp_trim_words( wp_kses_post( get_the_content() ), 20 ); ?>
-									<?php endif; ?>
-                                </p>
-                                <div class="btn-wrap">
-                                    <a href="<?php the_permalink(); ?>"><?php esc_html_e( $data['readMoreText'], 'entire-blocks' ); ?></a>
-                                </div>
-                            </div><!-- .list-item-desc -->
+                            <div class="entire-blocks-card entire-blocks-box-shadow">
+								<?php if ( has_post_thumbnail() && $data['displayThumbnails'] == 'true' ): ?>
+                                    <div class="list-item-img">
+										<?php the_post_thumbnail( 'post-thumbnail-small' ); ?>
+                                    </div><!-- .list-item-img -->
+								<?php endif; ?>
+                                <div class="list-item-desc">
+                                    <h3 class="list-item-title">
+                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </h3>
+                                    <p>
+										<?php if ( has_excerpt() ): ?>
+											<?php echo wp_kses_post( get_the_excerpt() ); ?>
+										<?php else: ?>
+											<?php echo wp_kses_post( wp_trim_words( get_the_content(), 20 ) ); ?>
+										<?php endif; ?>
+                                    </p>
+                                    <div class="btn-wrap">
+                                        <a href="<?php the_permalink(); ?>"><?php esc_html_e( $data['readMoreText'], 'entire-blocks' ); ?></a>
+                                    </div>
+                                </div><!-- .list-item-desc -->
+                            </div><!-- .card -->
                         </div><!-- .list-item -->
 					<?php endwhile; ?>
                     <!-- end of the loop -->
