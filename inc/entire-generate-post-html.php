@@ -2,10 +2,6 @@
 function entire_generate_post_html( $data ) {
 	ob_start();
 
-	/* echo "<pre>";
-		 print_r($data);
-	 echo "</pre>";*/
-
 	$noOfPost    = intval( $data['noOfPost'] );
 	$blogColumns = intval( $data['blogColumns'] );
 
@@ -27,7 +23,6 @@ function entire_generate_post_html( $data ) {
 
         .entire-blocks-section .list-item-wrap .list-item {
             flex: 0 0 <?php echo esc_attr(100 / $blogColumns); ?>%;
-            /*max-width: < ?php echo esc_attr(100 / $blogColumns); ?>%;*/
         }
 
         .entire-blocks-section .list-item-desc a {
@@ -136,7 +131,6 @@ function entire_generate_post_html1( $data ) {
 	ob_start();
 
 	echo "<pre>";
-	//if(empty(get_the_ID())):
 	$post_id = 62;
 	$post    = get_post( $post_id );
 	$blocks  = parse_blocks( $post->post_content );
@@ -146,10 +140,6 @@ function entire_generate_post_html1( $data ) {
 			break;
 		}
 	}
-	//endif;
-	/*echo "<pre>";
-	print_r($data);
-	echo "</pre>";*/
 
 	$file_or_folder = __DIR__ . './../build';
 	$filename       = 'block.json';
